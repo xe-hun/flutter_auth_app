@@ -7,7 +7,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await configureDependencies();
 
-  runApp(const InitWidget());
+  runApp(InitWidget());
 }
 
 final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();

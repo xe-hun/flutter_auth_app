@@ -4,11 +4,12 @@ import 'package:flutter_auth_app/injectable.dart';
 import 'package:flutter_auth_app/main.dart';
 import 'package:flutter_auth_app/presentation/core/ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:responsive_framework/responsive_framework.dart';
 
 class InitWidget extends StatelessWidget {
-  const InitWidget({Key? key}) : super(key: key);
+  InitWidget({Key? key}) : super(key: key);
+
+  final GlobalKey _key = GlobalKey();
 
   // This widget is the root of your application.
   @override
@@ -16,6 +17,7 @@ class InitWidget extends StatelessWidget {
     return BlocProvider(
         create: (context) => getIt<ThemeBloc>(),
         child: BlocBuilder<ThemeBloc, ThemeState>(
+          // key: _key,
           builder: (context, state) {
             return MaterialApp.router(
               routeInformationParser: appRouter.defaultRouteParser(),

@@ -3,25 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth_app/application/theme/theme_bloc.dart';
 import 'package:flutter_auth_app/presentation/router/app_router.gr.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class InitPage extends StatefulWidget {
+class InitPage extends HookWidget {
   const InitPage({super.key});
 
   @override
-  State<InitPage> createState() => _InitPageState();
-}
-
-class _InitPageState extends State<InitPage> {
-  @override
-  void initState() {
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      BlocProvider.of<ThemeBloc>(context).add(const ThemeEvent.started());
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    useEffect(() {
+      WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+        final themeBloc = BlocProvider.of<ThemeBloc>(context);
+        await precacheImage(
+            const AssetImage("assets/images/note_background.jpg"), context);
+
+        themeBloc.add(const ThemeEvent.started());
+      });
+      return null;
+    }, [0]);
+
     return BlocListener<ThemeBloc, ThemeState>(
       listener: (context, state) {
         state.maybeWhen(
@@ -30,7 +29,7 @@ class _InitPageState extends State<InitPage> {
           },
           orElse: () {
             Future.delayed(const Duration(milliseconds: 800),
-                () => context.router.replace(const LandingRoute()));
+                () => context.router.replace(const AuthRoute()));
           },
         );
       },

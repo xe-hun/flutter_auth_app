@@ -1,7 +1,7 @@
-import 'package:bloc/bloc.dart';
 import 'package:flutter_auth_app/application/core/ui_objects.dart';
 import 'package:flutter_auth_app/domain/i_repository/i_prefs_repository.dart';
 import 'package:flutter_auth_app/schema/prefs.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 

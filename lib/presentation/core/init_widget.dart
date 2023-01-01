@@ -7,9 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class InitWidget extends StatelessWidget {
-  InitWidget({Key? key}) : super(key: key);
-
-  final GlobalKey _key = GlobalKey();
+  const InitWidget({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override

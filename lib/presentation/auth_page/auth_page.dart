@@ -6,8 +6,6 @@ class AuthPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(hashCode);
-    print('zenkai');
     return GestureDetector(
         onTap: () {
           FocusScope.of(context).unfocus();

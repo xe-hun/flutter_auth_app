@@ -25,41 +25,46 @@ class AuthLayout extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15.0,
+            ),
             child: SingleChildScrollView(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                // crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * .3,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(displayText,
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall!
-                                .copyWith(fontWeight: FontWeight.w700))),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Container(
-                      color: Colors.grey.withOpacity(.5),
-                      child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-                          child: SizedBox(
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 30.0, vertical: 30),
-                              child: pageContent,
-                            ),
-                          )),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  // crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.of(context).size.height * .3,
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(displayText,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displaySmall!
+                                  .copyWith(fontWeight: FontWeight.w700))),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Container(
+                        color: Colors.black26,
+                        child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                            child: SizedBox(
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 30.0, vertical: 30),
+                                child: pageContent,
+                              ),
+                            )),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter_auth_app/presentation/app/app_page.dart';
 import 'package:flutter_auth_app/presentation/auth_page/login_password_page.dart';
 import 'package:flutter_auth_app/presentation/init_page/init_page.dart';
 import 'package:flutter_auth_app/presentation/auth_page/auth_page.dart';
@@ -20,6 +21,7 @@ import 'package:flutter_auth_app/presentation/auth_page/signup_page.dart';
           AutoRoute(page: LoginPasswordPage),
           AutoRoute(page: SignupPage)
         ]),
+    AutoRoute(page: AppPage),
     AutoRoute(page: InitPage, initial: true),
   ],
 )

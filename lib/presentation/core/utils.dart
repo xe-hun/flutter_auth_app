@@ -6,6 +6,8 @@ Color _onTertiaryLight = Colors.grey.shade700;
 Color _secondaryLight = Colors.blue.shade50;
 Color _onSecondaryLight = Colors.grey.shade800;
 Color _onBackgroundLight = Colors.grey.shade900;
+// ignore: prefer_const_constructors
+Color _error = Color.fromARGB(255, 252, 83, 83);
 
 ThemeData lightThemeData() {
   return ThemeData(
@@ -14,24 +16,26 @@ ThemeData lightThemeData() {
         secondary: _secondaryLight,
         onSecondary: _onSecondaryLight,
         onTertiary: _onTertiaryLight,
+        error: _error,
         onBackground: _onBackgroundLight),
-    textTheme: Typography().black.copyWith(
-        // labelLarge: const TextStyle(fontSize: 20), //on buttons
-        // bodyMedium: TextStyle(
-        //     color: Colors.grey.shade900,
-        //     fontSize: 28,
-        //     letterSpacing: 1.2,
-        //     height: 1.5), //textstyle,
+    iconTheme: IconThemeData(color: _onBackgroundLight),
+    textTheme: Typography().black,
+    // .copyWith(
+    // labelLarge: const TextStyle(fontSize: 20), //on buttons
+    // bodyMedium: TextStyle(
+    //     color: Colors.grey.shade900,
+    //     fontSize: 28,
+    //     letterSpacing: 1.2,
+    //     height: 1.5), //textstyle,
 
-        // bodySmall: TextStyle(
-        //   fontSize: 16,
-        //   color: Colors.grey.shade800,
-        // ),
-        // titleMedium: const TextStyle(fontSize: 25),
-        // labelMedium:
-        //     const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-        ),
-    iconTheme: IconThemeData(color: _tertiaryLight),
+    // bodySmall: TextStyle(
+    //   fontSize: 16,
+    //   color: Colors.grey.shade800,
+    // ),
+    // titleMedium: const TextStyle(fontSize: 25),
+    // labelMedium:
+    //     const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+    // ),
   );
 }
 

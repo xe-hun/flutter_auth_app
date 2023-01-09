@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'landing_page_bloc.dart';
+part of 'app_page_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$LandingPageEvent {
+mixin _$AppPageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int index) changeTab,
+    required TResult Function(dynamic Function() onLogout) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int index)? changeTab,
+    TResult? Function(dynamic Function() onLogout)? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int index)? changeTab,
+    TResult Function(dynamic Function() onLogout)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
+    required TResult Function(_Logout value) logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
+    TResult? Function(_Logout value)? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
+    TResult Function(_Logout value)? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LandingPageEventCopyWith<$Res> {
-  factory $LandingPageEventCopyWith(
-          LandingPageEvent value, $Res Function(LandingPageEvent) then) =
-      _$LandingPageEventCopyWithImpl<$Res, LandingPageEvent>;
+abstract class $AppPageEventCopyWith<$Res> {
+  factory $AppPageEventCopyWith(
+          AppPageEvent value, $Res Function(AppPageEvent) then) =
+      _$AppPageEventCopyWithImpl<$Res, AppPageEvent>;
 }
 
 /// @nodoc
-class _$LandingPageEventCopyWithImpl<$Res, $Val extends LandingPageEvent>
-    implements $LandingPageEventCopyWith<$Res> {
-  _$LandingPageEventCopyWithImpl(this._value, this._then);
+class _$AppPageEventCopyWithImpl<$Res, $Val extends AppPageEvent>
+    implements $AppPageEventCopyWith<$Res> {
+  _$AppPageEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +83,7 @@ abstract class _$$_StartedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_StartedCopyWithImpl<$Res>
-    extends _$LandingPageEventCopyWithImpl<$Res, _$_Started>
+    extends _$AppPageEventCopyWithImpl<$Res, _$_Started>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
       : super(_value, _then);
@@ -96,7 +96,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'LandingPageEvent.started()';
+    return 'AppPageEvent.started()';
   }
 
   @override
@@ -112,7 +112,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int index) changeTab,
+    required TResult Function(dynamic Function() onLogout) logout,
   }) {
     return started();
   }
@@ -121,7 +121,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int index)? changeTab,
+    TResult? Function(dynamic Function() onLogout)? logout,
   }) {
     return started?.call();
   }
@@ -130,7 +130,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int index)? changeTab,
+    TResult Function(dynamic Function() onLogout)? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -143,7 +143,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
+    required TResult Function(_Logout value) logout,
   }) {
     return started(this);
   }
@@ -152,7 +152,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
+    TResult? Function(_Logout value)? logout,
   }) {
     return started?.call(this);
   }
@@ -161,7 +161,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
+    TResult Function(_Logout value)? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -171,98 +171,97 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements LandingPageEvent {
+abstract class _Started implements AppPageEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-abstract class _$$_ChangeTabCopyWith<$Res> {
-  factory _$$_ChangeTabCopyWith(
-          _$_ChangeTab value, $Res Function(_$_ChangeTab) then) =
-      __$$_ChangeTabCopyWithImpl<$Res>;
+abstract class _$$_LogoutCopyWith<$Res> {
+  factory _$$_LogoutCopyWith(_$_Logout value, $Res Function(_$_Logout) then) =
+      __$$_LogoutCopyWithImpl<$Res>;
   @useResult
-  $Res call({int index});
+  $Res call({dynamic Function() onLogout});
 }
 
 /// @nodoc
-class __$$_ChangeTabCopyWithImpl<$Res>
-    extends _$LandingPageEventCopyWithImpl<$Res, _$_ChangeTab>
-    implements _$$_ChangeTabCopyWith<$Res> {
-  __$$_ChangeTabCopyWithImpl(
-      _$_ChangeTab _value, $Res Function(_$_ChangeTab) _then)
+class __$$_LogoutCopyWithImpl<$Res>
+    extends _$AppPageEventCopyWithImpl<$Res, _$_Logout>
+    implements _$$_LogoutCopyWith<$Res> {
+  __$$_LogoutCopyWithImpl(_$_Logout _value, $Res Function(_$_Logout) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = null,
+    Object? onLogout = null,
   }) {
-    return _then(_$_ChangeTab(
-      index: null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_$_Logout(
+      onLogout: null == onLogout
+          ? _value.onLogout
+          : onLogout // ignore: cast_nullable_to_non_nullable
+              as dynamic Function(),
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ChangeTab implements _ChangeTab {
-  const _$_ChangeTab({required this.index});
+class _$_Logout implements _Logout {
+  const _$_Logout({required this.onLogout});
 
   @override
-  final int index;
+  final dynamic Function() onLogout;
 
   @override
   String toString() {
-    return 'LandingPageEvent.changeTab(index: $index)';
+    return 'AppPageEvent.logout(onLogout: $onLogout)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ChangeTab &&
-            (identical(other.index, index) || other.index == index));
+            other is _$_Logout &&
+            (identical(other.onLogout, onLogout) ||
+                other.onLogout == onLogout));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index);
+  int get hashCode => Object.hash(runtimeType, onLogout);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ChangeTabCopyWith<_$_ChangeTab> get copyWith =>
-      __$$_ChangeTabCopyWithImpl<_$_ChangeTab>(this, _$identity);
+  _$$_LogoutCopyWith<_$_Logout> get copyWith =>
+      __$$_LogoutCopyWithImpl<_$_Logout>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(int index) changeTab,
+    required TResult Function(dynamic Function() onLogout) logout,
   }) {
-    return changeTab(index);
+    return logout(onLogout);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(int index)? changeTab,
+    TResult? Function(dynamic Function() onLogout)? logout,
   }) {
-    return changeTab?.call(index);
+    return logout?.call(onLogout);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(int index)? changeTab,
+    TResult Function(dynamic Function() onLogout)? logout,
     required TResult orElse(),
   }) {
-    if (changeTab != null) {
-      return changeTab(index);
+    if (logout != null) {
+      return logout(onLogout);
     }
     return orElse();
   }
@@ -271,61 +270,67 @@ class _$_ChangeTab implements _ChangeTab {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_ChangeTab value) changeTab,
+    required TResult Function(_Logout value) logout,
   }) {
-    return changeTab(this);
+    return logout(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_ChangeTab value)? changeTab,
+    TResult? Function(_Logout value)? logout,
   }) {
-    return changeTab?.call(this);
+    return logout?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_ChangeTab value)? changeTab,
+    TResult Function(_Logout value)? logout,
     required TResult orElse(),
   }) {
-    if (changeTab != null) {
-      return changeTab(this);
+    if (logout != null) {
+      return logout(this);
     }
     return orElse();
   }
 }
 
-abstract class _ChangeTab implements LandingPageEvent {
-  const factory _ChangeTab({required final int index}) = _$_ChangeTab;
+abstract class _Logout implements AppPageEvent {
+  const factory _Logout({required final dynamic Function() onLogout}) =
+      _$_Logout;
 
-  int get index;
+  dynamic Function() get onLogout;
   @JsonKey(ignore: true)
-  _$$_ChangeTabCopyWith<_$_ChangeTab> get copyWith =>
+  _$$_LogoutCopyWith<_$_Logout> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$LandingPageState {
+mixin _$AppPageState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int currentIndex) idle,
+    required TResult Function(
+            String? errorMessage, dynamic isLoading, User userDetails)
+        idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int currentIndex)? idle,
+    TResult? Function(
+            String? errorMessage, dynamic isLoading, User userDetails)?
+        idle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int currentIndex)? idle,
+    TResult Function(String? errorMessage, dynamic isLoading, User userDetails)?
+        idle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -351,16 +356,16 @@ mixin _$LandingPageState {
 }
 
 /// @nodoc
-abstract class $LandingPageStateCopyWith<$Res> {
-  factory $LandingPageStateCopyWith(
-          LandingPageState value, $Res Function(LandingPageState) then) =
-      _$LandingPageStateCopyWithImpl<$Res, LandingPageState>;
+abstract class $AppPageStateCopyWith<$Res> {
+  factory $AppPageStateCopyWith(
+          AppPageState value, $Res Function(AppPageState) then) =
+      _$AppPageStateCopyWithImpl<$Res, AppPageState>;
 }
 
 /// @nodoc
-class _$LandingPageStateCopyWithImpl<$Res, $Val extends LandingPageState>
-    implements $LandingPageStateCopyWith<$Res> {
-  _$LandingPageStateCopyWithImpl(this._value, this._then);
+class _$AppPageStateCopyWithImpl<$Res, $Val extends AppPageState>
+    implements $AppPageStateCopyWith<$Res> {
+  _$AppPageStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -377,7 +382,7 @@ abstract class _$$_InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$LandingPageStateCopyWithImpl<$Res, _$_Initial>
+    extends _$AppPageStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -390,7 +395,7 @@ class _$_Initial implements _Initial {
 
   @override
   String toString() {
-    return 'LandingPageState.initial()';
+    return 'AppPageState.initial()';
   }
 
   @override
@@ -406,7 +411,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int currentIndex) idle,
+    required TResult Function(
+            String? errorMessage, dynamic isLoading, User userDetails)
+        idle,
   }) {
     return initial();
   }
@@ -415,7 +422,9 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int currentIndex)? idle,
+    TResult? Function(
+            String? errorMessage, dynamic isLoading, User userDetails)?
+        idle,
   }) {
     return initial?.call();
   }
@@ -424,7 +433,8 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int currentIndex)? idle,
+    TResult Function(String? errorMessage, dynamic isLoading, User userDetails)?
+        idle,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -465,7 +475,7 @@ class _$_Initial implements _Initial {
   }
 }
 
-abstract class _Initial implements LandingPageState {
+abstract class _Initial implements AppPageState {
   const factory _Initial() = _$_Initial;
 }
 
@@ -474,12 +484,14 @@ abstract class _$$_IdleCopyWith<$Res> {
   factory _$$_IdleCopyWith(_$_Idle value, $Res Function(_$_Idle) then) =
       __$$_IdleCopyWithImpl<$Res>;
   @useResult
-  $Res call({int currentIndex});
+  $Res call({String? errorMessage, dynamic isLoading, User userDetails});
+
+  $UserCopyWith<$Res> get userDetails;
 }
 
 /// @nodoc
 class __$$_IdleCopyWithImpl<$Res>
-    extends _$LandingPageStateCopyWithImpl<$Res, _$_Idle>
+    extends _$AppPageStateCopyWithImpl<$Res, _$_Idle>
     implements _$$_IdleCopyWith<$Res> {
   __$$_IdleCopyWithImpl(_$_Idle _value, $Res Function(_$_Idle) _then)
       : super(_value, _then);
@@ -487,28 +499,49 @@ class __$$_IdleCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentIndex = null,
+    Object? errorMessage = freezed,
+    Object? isLoading = freezed,
+    Object? userDetails = null,
   }) {
     return _then(_$_Idle(
-      currentIndex: null == currentIndex
-          ? _value.currentIndex
-          : currentIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      errorMessage: freezed == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isLoading: freezed == isLoading ? _value.isLoading! : isLoading,
+      userDetails: null == userDetails
+          ? _value.userDetails
+          : userDetails // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get userDetails {
+    return $UserCopyWith<$Res>(_value.userDetails, (value) {
+      return _then(_value.copyWith(userDetails: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_Idle implements _Idle {
-  const _$_Idle({required this.currentIndex});
+  const _$_Idle(
+      {this.errorMessage, this.isLoading = false, required this.userDetails});
 
   @override
-  final int currentIndex;
+  final String? errorMessage;
+  @override
+  @JsonKey()
+  final dynamic isLoading;
+  @override
+  final User userDetails;
 
   @override
   String toString() {
-    return 'LandingPageState.idle(currentIndex: $currentIndex)';
+    return 'AppPageState.idle(errorMessage: $errorMessage, isLoading: $isLoading, userDetails: $userDetails)';
   }
 
   @override
@@ -516,12 +549,16 @@ class _$_Idle implements _Idle {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Idle &&
-            (identical(other.currentIndex, currentIndex) ||
-                other.currentIndex == currentIndex));
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            (identical(other.userDetails, userDetails) ||
+                other.userDetails == userDetails));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentIndex);
+  int get hashCode => Object.hash(runtimeType, errorMessage,
+      const DeepCollectionEquality().hash(isLoading), userDetails);
 
   @JsonKey(ignore: true)
   @override
@@ -533,29 +570,34 @@ class _$_Idle implements _Idle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(int currentIndex) idle,
+    required TResult Function(
+            String? errorMessage, dynamic isLoading, User userDetails)
+        idle,
   }) {
-    return idle(currentIndex);
+    return idle(errorMessage, isLoading, userDetails);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(int currentIndex)? idle,
+    TResult? Function(
+            String? errorMessage, dynamic isLoading, User userDetails)?
+        idle,
   }) {
-    return idle?.call(currentIndex);
+    return idle?.call(errorMessage, isLoading, userDetails);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(int currentIndex)? idle,
+    TResult Function(String? errorMessage, dynamic isLoading, User userDetails)?
+        idle,
     required TResult orElse(),
   }) {
     if (idle != null) {
-      return idle(currentIndex);
+      return idle(errorMessage, isLoading, userDetails);
     }
     return orElse();
   }
@@ -592,10 +634,15 @@ class _$_Idle implements _Idle {
   }
 }
 
-abstract class _Idle implements LandingPageState {
-  const factory _Idle({required final int currentIndex}) = _$_Idle;
+abstract class _Idle implements AppPageState {
+  const factory _Idle(
+      {final String? errorMessage,
+      final dynamic isLoading,
+      required final User userDetails}) = _$_Idle;
 
-  int get currentIndex;
+  String? get errorMessage;
+  dynamic get isLoading;
+  User get userDetails;
   @JsonKey(ignore: true)
   _$$_IdleCopyWith<_$_Idle> get copyWith => throw _privateConstructorUsedError;
 }

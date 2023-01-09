@@ -15,28 +15,26 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$UserInfo {
+mixin _$User {
   String get email => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
-  String? get profilePic => throw _privateConstructorUsedError;
+  String get displayname => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserInfoCopyWith<UserInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserInfoCopyWith<$Res> {
-  factory $UserInfoCopyWith(UserInfo value, $Res Function(UserInfo) then) =
-      _$UserInfoCopyWithImpl<$Res, UserInfo>;
+abstract class $UserCopyWith<$Res> {
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+      _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String email, String username, String? profilePic});
+  $Res call({String email, String displayname});
 }
 
 /// @nodoc
-class _$UserInfoCopyWithImpl<$Res, $Val extends UserInfo>
-    implements $UserInfoCopyWith<$Res> {
-  _$UserInfoCopyWithImpl(this._value, this._then);
+class _$UserCopyWithImpl<$Res, $Val extends User>
+    implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -47,124 +45,101 @@ class _$UserInfoCopyWithImpl<$Res, $Val extends UserInfo>
   @override
   $Res call({
     Object? email = null,
-    Object? username = null,
-    Object? profilePic = freezed,
+    Object? displayname = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      displayname: null == displayname
+          ? _value.displayname
+          : displayname // ignore: cast_nullable_to_non_nullable
               as String,
-      profilePic: freezed == profilePic
-          ? _value.profilePic
-          : profilePic // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserInfoCopyWith<$Res> implements $UserInfoCopyWith<$Res> {
-  factory _$$_UserInfoCopyWith(
-          _$_UserInfo value, $Res Function(_$_UserInfo) then) =
-      __$$_UserInfoCopyWithImpl<$Res>;
+abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
+      __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String username, String? profilePic});
+  $Res call({String email, String displayname});
 }
 
 /// @nodoc
-class __$$_UserInfoCopyWithImpl<$Res>
-    extends _$UserInfoCopyWithImpl<$Res, _$_UserInfo>
-    implements _$$_UserInfoCopyWith<$Res> {
-  __$$_UserInfoCopyWithImpl(
-      _$_UserInfo _value, $Res Function(_$_UserInfo) _then)
+class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
+    implements _$$_UserCopyWith<$Res> {
+  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? email = null,
-    Object? username = null,
-    Object? profilePic = freezed,
+    Object? displayname = null,
   }) {
-    return _then(_$_UserInfo(
+    return _then(_$_User(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
+      displayname: null == displayname
+          ? _value.displayname
+          : displayname // ignore: cast_nullable_to_non_nullable
               as String,
-      profilePic: freezed == profilePic
-          ? _value.profilePic
-          : profilePic // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_UserInfo extends _UserInfo {
-  const _$_UserInfo(
-      {required this.email, required this.username, this.profilePic})
-      : super._();
+class _$_User extends _User {
+  const _$_User({required this.email, required this.displayname}) : super._();
 
   @override
   final String email;
   @override
-  final String username;
-  @override
-  final String? profilePic;
+  final String displayname;
 
   @override
   String toString() {
-    return 'UserInfo(email: $email, username: $username, profilePic: $profilePic)';
+    return 'User(email: $email, displayname: $displayname)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserInfo &&
+            other is _$_User &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.profilePic, profilePic) ||
-                other.profilePic == profilePic));
+            (identical(other.displayname, displayname) ||
+                other.displayname == displayname));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, username, profilePic);
+  int get hashCode => Object.hash(runtimeType, email, displayname);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserInfoCopyWith<_$_UserInfo> get copyWith =>
-      __$$_UserInfoCopyWithImpl<_$_UserInfo>(this, _$identity);
+  _$$_UserCopyWith<_$_User> get copyWith =>
+      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
 }
 
-abstract class _UserInfo extends UserInfo {
-  const factory _UserInfo(
+abstract class _User extends User {
+  const factory _User(
       {required final String email,
-      required final String username,
-      final String? profilePic}) = _$_UserInfo;
-  const _UserInfo._() : super._();
+      required final String displayname}) = _$_User;
+  const _User._() : super._();
 
   @override
   String get email;
   @override
-  String get username;
-  @override
-  String? get profilePic;
+  String get displayname;
   @override
   @JsonKey(ignore: true)
-  _$$_UserInfoCopyWith<_$_UserInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
 }

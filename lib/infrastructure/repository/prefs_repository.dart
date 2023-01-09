@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_auth_app/domain/core/failures.dart';
 import 'package:flutter_auth_app/domain/i_repository/i_prefs_repository.dart';
-import 'package:flutter_auth_app/infrastructure/data_source/save_box.dart';
+import 'package:flutter_auth_app/infrastructure/datasource/save_box.dart';
 import 'package:flutter_auth_app/schema/prefs.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,25 +11,27 @@ class PrefsRepository implements IPrefsRepository {
   SaveBox datasource;
 
   @override
-  Future<Either<Failure, Prefs>> getAppPrefs() async {
+  Future<Either<StorageFailure, Prefs>> getAppPrefs() async {
     try {
       final result = await datasource.read<Prefs, int>(key: 0);
       if (result == null) {
-        return const Left(Failure.noItemInStorage(failedValue: null));
+        return const Left(StorageFailure.noItemInStorage());
       }
       return Right(result);
     } catch (e) {
-      return Left(Failure.storageFailure(failedValue: e.toString()));
+      return Left(
+          StorageFailure.storageGenericFailure(failedValue: e.toString()));
     }
   }
 
   @override
-  Future<Either<Failure, Unit>> saveAppPrefs(ThemeType themeType) async {
+  Future<Either<StorageFailure, Unit>> saveAppPrefs(ThemeType themeType) async {
     try {
       await datasource.save(object: Prefs(themeType));
       return const Right(unit);
     } catch (e) {
-      return Left(Failure.storageFailure(failedValue: e.toString()));
+      return Left(
+          StorageFailure.storageGenericFailure(failedValue: e.toString()));
     }
   }
 }

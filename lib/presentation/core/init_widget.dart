@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_app/application/theme/theme_bloc.dart';
 import 'package:flutter_auth_app/injectable.dart';
-import 'package:flutter_auth_app/main.dart';
-import 'package:flutter_auth_app/presentation/core/ui.dart';
+import 'package:flutter_auth_app/presentation/core/utils.dart';
+import 'package:flutter_auth_app/router/app_router.gr.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -12,6 +12,7 @@ class InitWidget extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final appRouter = getIt<AppRouter>();
     return BlocProvider(
         create: (context) => getIt<ThemeBloc>(),
         child: BlocBuilder<ThemeBloc, ThemeState>(

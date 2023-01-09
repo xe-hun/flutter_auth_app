@@ -1,5 +1,6 @@
 // import 'package:hive/hive.dart';
 
+import 'package:flutter_auth_app/domain/core/errors.dart';
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 
@@ -22,7 +23,10 @@ class SaveBoxImpl implements SaveBox {
     if (X == int) {
       return isar.writeTxn(() => isar.collection<T>().delete(key as int));
     }
-    throw Exception('required Type:key must be of type int');
+    throw AppError(
+      actionDescription: 'required Type:key must be of type int',
+      classLocation: this,
+    );
   }
 
   @override
@@ -30,7 +34,10 @@ class SaveBoxImpl implements SaveBox {
     if (X == int) {
       return isar.collection<T>().get(key as int);
     }
-    throw Exception('required Type:key must be of type int');
+    throw AppError(
+      actionDescription: 'required Type:key must be of type int',
+      classLocation: this,
+    );
   }
 
   @override

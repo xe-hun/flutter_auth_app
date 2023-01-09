@@ -3,12 +3,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'user.freezed.dart';
 
 @freezed
-class UserInfo with _$UserInfo {
-  const UserInfo._();
+class User with _$User {
+  const User._();
 
-  const factory UserInfo({
+  const factory User({
     required String email,
-    required String username,
-    String? profilePic,
-  }) = _UserInfo;
+    required String displayname,
+  }) = _User;
 }

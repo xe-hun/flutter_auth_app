@@ -23,7 +23,7 @@ abstract class RemoteDatasource {
 
   Future<void> logout();
 
-  void sendEmailVerificationLink();
+  Future<void> sendEmailVerificationLink();
 
   void initializeDynamicLink();
 
@@ -129,9 +129,10 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   bool? get emailIsVerified => _user?.emailVerified;
 
   @override
-  void sendEmailVerificationLink() async {
+  Future<void> sendEmailVerificationLink() async {
     var actionCodeSettings = ActionCodeSettings(
-      url: 'https://www.example.com/?email=${_user!.email}',
+      url:
+          'https://www.flutterauthdemonstration.com?validate-email=${_user!.email}',
       dynamicLinkDomain: 'https://flutterauthdemonstration.page.link/4Yif',
       androidPackageName: 'com.example.flutter_auth_app',
       androidInstallApp: true,
@@ -139,7 +140,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
       // iOSBundleId: 'com.example.ios',
       handleCodeInApp: true,
     );
-    await _user!.sendEmailVerification(actionCodeSettings);
+    return await _user!.sendEmailVerification(actionCodeSettings);
   }
 
   @override

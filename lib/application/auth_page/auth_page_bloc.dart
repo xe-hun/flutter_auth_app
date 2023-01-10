@@ -40,10 +40,11 @@ class AuthPageBloc extends Bloc<AuthPageEvent, AuthPageState> {
               final errorMessage = _getErrorMessages(l);
               emit(AuthPageState.display(errorMessage: errorMessage));
             },
-            (r) => e.onRegister(),
+            (r) async {
+              e.onRegister();
+              await authRepository.sendVerificationEmail();
+            },
           );
-
-          await authRepository.sendVerificationEmail();
         },
         logout: (e) async {
           (await authRepository.logout()).fold(

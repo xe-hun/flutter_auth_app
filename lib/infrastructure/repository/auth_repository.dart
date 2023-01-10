@@ -89,11 +89,12 @@ class AuthRepository implements IAuthRepository {
   @override
   Future<Either<AuthFailure, Unit>> sendVerificationEmail() async {
     try {
-      datasource.sendEmailVerificationLink();
+      await datasource.sendEmailVerificationLink();
       return const Right(unit);
     } on AuthFailure catch (e) {
       return Left(e);
     } catch (e) {
+      rethrow;
       throw AppError(
         actionDescription: 'exception on logout handler',
         errorObject: e,

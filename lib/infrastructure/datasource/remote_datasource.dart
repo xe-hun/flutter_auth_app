@@ -131,9 +131,10 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   @override
   Future<void> sendEmailVerificationLink() async {
     var actionCodeSettings = ActionCodeSettings(
+      // url: 'https://fir-auth-847b7.firebaseapp.com',
       url:
-          'https://www.flutterauthdemonstration.com?validate-email=${_user!.email}',
-      dynamicLinkDomain: 'https://flutterauthdemonstration.page.link/4Yif',
+          'https://www.flutterauthdemonstration.com/?validate-email=${_user!.email}',
+      // dynamicLinkDomain: 'flutterauthdemonstration.page.link/4Yif',
       androidPackageName: 'com.example.flutter_auth_app',
       androidInstallApp: true,
       androidMinimumVersion: '12',
@@ -175,6 +176,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   @override
   void onListenToDynamicLink(void Function(Uri dynamicLink) handleDynamicLink) {
     firebaseDynamicLinks.onLink.listen((event) async {
+      print(event);
       var actionCode = event.link.queryParameters['oobCode'];
       try {
         await firebaseAuth.checkActionCode(actionCode!);

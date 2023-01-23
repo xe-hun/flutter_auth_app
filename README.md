@@ -3,7 +3,9 @@ A flutter mobile application showcasing authentication and remote data fetching.
  
 # Features 
 - would be updated as more features are added.
-- dynamically change theme.
+- user authentication using firebase
+- google sigin
+- dynamic link functionality
 
 ## Introduction
 In this project I showcase the app structure necessary to build a scalable, robust and testable app, necessary packages from pub.dev were were used to achieve this feat.

@@ -11,16 +11,21 @@ class UserDto with _$UserDto {
   factory UserDto({
     required String displayName,
     required String email,
+    required String? imageUrl,
   }) = _UserDto;
 
   factory UserDto.fromFirebaseUser(firebase_auth.User user) {
-    return UserDto(displayName: user.displayName!, email: user.email!);
+    return UserDto(
+        displayName: user.displayName!,
+        email: user.email!,
+        imageUrl: user.photoURL);
   }
 
   model.User toUserModel() {
     return model.User(
       email: email,
       displayname: displayName,
+      imageUrl: imageUrl,
     );
   }
 }

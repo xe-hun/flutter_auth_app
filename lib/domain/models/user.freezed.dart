@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   String get email => throw _privateConstructorUsedError;
   String get displayname => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +29,7 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res, User>;
   @useResult
-  $Res call({String email, String displayname});
+  $Res call({String email, String displayname, String? imageUrl});
 }
 
 /// @nodoc
@@ -46,6 +47,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? email = null,
     Object? displayname = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -56,6 +58,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.displayname
           : displayname // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -66,7 +72,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String displayname});
+  $Res call({String email, String displayname, String? imageUrl});
 }
 
 /// @nodoc
@@ -80,6 +86,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? email = null,
     Object? displayname = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$_User(
       email: null == email
@@ -90,6 +97,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.displayname
           : displayname // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -97,16 +108,20 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 /// @nodoc
 
 class _$_User extends _User {
-  const _$_User({required this.email, required this.displayname}) : super._();
+  const _$_User(
+      {required this.email, required this.displayname, required this.imageUrl})
+      : super._();
 
   @override
   final String email;
   @override
   final String displayname;
+  @override
+  final String? imageUrl;
 
   @override
   String toString() {
-    return 'User(email: $email, displayname: $displayname)';
+    return 'User(email: $email, displayname: $displayname, imageUrl: $imageUrl)';
   }
 
   @override
@@ -116,11 +131,13 @@ class _$_User extends _User {
             other is _$_User &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.displayname, displayname) ||
-                other.displayname == displayname));
+                other.displayname == displayname) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, displayname);
+  int get hashCode => Object.hash(runtimeType, email, displayname, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -132,13 +149,16 @@ class _$_User extends _User {
 abstract class _User extends User {
   const factory _User(
       {required final String email,
-      required final String displayname}) = _$_User;
+      required final String displayname,
+      required final String? imageUrl}) = _$_User;
   const _User._() : super._();
 
   @override
   String get email;
   @override
   String get displayname;
+  @override
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

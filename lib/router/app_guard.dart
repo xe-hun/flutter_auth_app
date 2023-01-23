@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_auth_app/domain/i_repository/i_auth_repository.dart';
-import 'package:flutter_auth_app/presentation/auth_pages/auth_page.dart';
 import 'package:flutter_auth_app/router/app_router.gr.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,7 +16,7 @@ class AppGuard extends AutoRouteGuard {
       // if user is authenticated we continue
       resolver.next(true);
     } else if (authRepository.isLoggedIn == true) {
-      router.replace(const SendVerificationEmailRoute());
+      // router.replace(const SendVerificationEmailRoute());
       resolver.next(false);
     } else {
       router.replace(const AuthRoute());

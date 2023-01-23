@@ -55,6 +55,16 @@ class AuthPageBloc extends Bloc<AuthPageEvent, AuthPageState> {
             (r) => e.onLogout(),
           );
         },
+        loginWithGoogle: (e) async {
+          emit(const AuthPageState.display(loading: true));
+          (await authRepository.loginWithGoogle()).fold(
+            (l) {
+              final errorMessage = _getErrorMessages(l);
+              emit(AuthPageState.display(errorMessage: errorMessage));
+            },
+            (r) => e.onLogin(),
+          );
+        },
       );
     });
   }

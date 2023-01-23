@@ -94,9 +94,26 @@ class AuthRepository implements IAuthRepository {
     } on AuthFailure catch (e) {
       return Left(e);
     } catch (e) {
+      throw AppError(
+        actionDescription: 'exception on sendVerificationEmail handler',
+        errorObject: e,
+        classLocation: this,
+      );
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, model.User>> loginWithGoogle() async {
+    try {
+      final result = await datasource.loginWithGoogle();
+
+      return Right(result.toUserModel());
+    } on AuthFailure catch (e) {
+      return Left(e);
+    } catch (e) {
       rethrow;
       throw AppError(
-        actionDescription: 'exception on logout handler',
+        actionDescription: 'exception on login with google handler',
         errorObject: e,
         classLocation: this,
       );

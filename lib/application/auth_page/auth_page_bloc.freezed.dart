@@ -20,6 +20,7 @@ mixin _$AuthPageEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(void Function() onLogin) login,
+    required TResult Function(void Function() onLogin) loginWithGoogle,
     required TResult Function(void Function() onLogout) logout,
     required TResult Function(void Function() onRegister) register,
   }) =>
@@ -28,6 +29,7 @@ mixin _$AuthPageEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(void Function() onLogin)? login,
+    TResult? Function(void Function() onLogin)? loginWithGoogle,
     TResult? Function(void Function() onLogout)? logout,
     TResult? Function(void Function() onRegister)? register,
   }) =>
@@ -36,6 +38,7 @@ mixin _$AuthPageEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(void Function() onLogin)? login,
+    TResult Function(void Function() onLogin)? loginWithGoogle,
     TResult Function(void Function() onLogout)? logout,
     TResult Function(void Function() onRegister)? register,
     required TResult orElse(),
@@ -45,6 +48,7 @@ mixin _$AuthPageEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Login value) login,
+    required TResult Function(_LoginWithGoogle value) loginWithGoogle,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Register value) register,
   }) =>
@@ -53,6 +57,7 @@ mixin _$AuthPageEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_Login value)? login,
+    TResult? Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Register value)? register,
   }) =>
@@ -61,6 +66,7 @@ mixin _$AuthPageEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Login value)? login,
+    TResult Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult Function(_Logout value)? logout,
     TResult Function(_Register value)? register,
     required TResult orElse(),
@@ -125,6 +131,7 @@ class _$_Started implements _Started {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(void Function() onLogin) login,
+    required TResult Function(void Function() onLogin) loginWithGoogle,
     required TResult Function(void Function() onLogout) logout,
     required TResult Function(void Function() onRegister) register,
   }) {
@@ -136,6 +143,7 @@ class _$_Started implements _Started {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(void Function() onLogin)? login,
+    TResult? Function(void Function() onLogin)? loginWithGoogle,
     TResult? Function(void Function() onLogout)? logout,
     TResult? Function(void Function() onRegister)? register,
   }) {
@@ -147,6 +155,7 @@ class _$_Started implements _Started {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(void Function() onLogin)? login,
+    TResult Function(void Function() onLogin)? loginWithGoogle,
     TResult Function(void Function() onLogout)? logout,
     TResult Function(void Function() onRegister)? register,
     required TResult orElse(),
@@ -162,6 +171,7 @@ class _$_Started implements _Started {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Login value) login,
+    required TResult Function(_LoginWithGoogle value) loginWithGoogle,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Register value) register,
   }) {
@@ -173,6 +183,7 @@ class _$_Started implements _Started {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_Login value)? login,
+    TResult? Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Register value)? register,
   }) {
@@ -184,6 +195,7 @@ class _$_Started implements _Started {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Login value)? login,
+    TResult Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult Function(_Logout value)? logout,
     TResult Function(_Register value)? register,
     required TResult orElse(),
@@ -263,6 +275,7 @@ class _$_Login implements _Login {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(void Function() onLogin) login,
+    required TResult Function(void Function() onLogin) loginWithGoogle,
     required TResult Function(void Function() onLogout) logout,
     required TResult Function(void Function() onRegister) register,
   }) {
@@ -274,6 +287,7 @@ class _$_Login implements _Login {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(void Function() onLogin)? login,
+    TResult? Function(void Function() onLogin)? loginWithGoogle,
     TResult? Function(void Function() onLogout)? logout,
     TResult? Function(void Function() onRegister)? register,
   }) {
@@ -285,6 +299,7 @@ class _$_Login implements _Login {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(void Function() onLogin)? login,
+    TResult Function(void Function() onLogin)? loginWithGoogle,
     TResult Function(void Function() onLogout)? logout,
     TResult Function(void Function() onRegister)? register,
     required TResult orElse(),
@@ -300,6 +315,7 @@ class _$_Login implements _Login {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Login value) login,
+    required TResult Function(_LoginWithGoogle value) loginWithGoogle,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Register value) register,
   }) {
@@ -311,6 +327,7 @@ class _$_Login implements _Login {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_Login value)? login,
+    TResult? Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Register value)? register,
   }) {
@@ -322,6 +339,7 @@ class _$_Login implements _Login {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Login value)? login,
+    TResult Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult Function(_Logout value)? logout,
     TResult Function(_Register value)? register,
     required TResult orElse(),
@@ -339,6 +357,158 @@ abstract class _Login implements AuthPageEvent {
   void Function() get onLogin;
   @JsonKey(ignore: true)
   _$$_LoginCopyWith<_$_Login> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_LoginWithGoogleCopyWith<$Res> {
+  factory _$$_LoginWithGoogleCopyWith(
+          _$_LoginWithGoogle value, $Res Function(_$_LoginWithGoogle) then) =
+      __$$_LoginWithGoogleCopyWithImpl<$Res>;
+  @useResult
+  $Res call({void Function() onLogin});
+}
+
+/// @nodoc
+class __$$_LoginWithGoogleCopyWithImpl<$Res>
+    extends _$AuthPageEventCopyWithImpl<$Res, _$_LoginWithGoogle>
+    implements _$$_LoginWithGoogleCopyWith<$Res> {
+  __$$_LoginWithGoogleCopyWithImpl(
+      _$_LoginWithGoogle _value, $Res Function(_$_LoginWithGoogle) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? onLogin = null,
+  }) {
+    return _then(_$_LoginWithGoogle(
+      onLogin: null == onLogin
+          ? _value.onLogin
+          : onLogin // ignore: cast_nullable_to_non_nullable
+              as void Function(),
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LoginWithGoogle implements _LoginWithGoogle {
+  const _$_LoginWithGoogle({required this.onLogin});
+
+  @override
+  final void Function() onLogin;
+
+  @override
+  String toString() {
+    return 'AuthPageEvent.loginWithGoogle(onLogin: $onLogin)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LoginWithGoogle &&
+            (identical(other.onLogin, onLogin) || other.onLogin == onLogin));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, onLogin);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoginWithGoogleCopyWith<_$_LoginWithGoogle> get copyWith =>
+      __$$_LoginWithGoogleCopyWithImpl<_$_LoginWithGoogle>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(void Function() onLogin) login,
+    required TResult Function(void Function() onLogin) loginWithGoogle,
+    required TResult Function(void Function() onLogout) logout,
+    required TResult Function(void Function() onRegister) register,
+  }) {
+    return loginWithGoogle(onLogin);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(void Function() onLogin)? login,
+    TResult? Function(void Function() onLogin)? loginWithGoogle,
+    TResult? Function(void Function() onLogout)? logout,
+    TResult? Function(void Function() onRegister)? register,
+  }) {
+    return loginWithGoogle?.call(onLogin);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(void Function() onLogin)? login,
+    TResult Function(void Function() onLogin)? loginWithGoogle,
+    TResult Function(void Function() onLogout)? logout,
+    TResult Function(void Function() onRegister)? register,
+    required TResult orElse(),
+  }) {
+    if (loginWithGoogle != null) {
+      return loginWithGoogle(onLogin);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_Login value) login,
+    required TResult Function(_LoginWithGoogle value) loginWithGoogle,
+    required TResult Function(_Logout value) logout,
+    required TResult Function(_Register value) register,
+  }) {
+    return loginWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_Login value)? login,
+    TResult? Function(_LoginWithGoogle value)? loginWithGoogle,
+    TResult? Function(_Logout value)? logout,
+    TResult? Function(_Register value)? register,
+  }) {
+    return loginWithGoogle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_Login value)? login,
+    TResult Function(_LoginWithGoogle value)? loginWithGoogle,
+    TResult Function(_Logout value)? logout,
+    TResult Function(_Register value)? register,
+    required TResult orElse(),
+  }) {
+    if (loginWithGoogle != null) {
+      return loginWithGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginWithGoogle implements AuthPageEvent {
+  const factory _LoginWithGoogle({required final void Function() onLogin}) =
+      _$_LoginWithGoogle;
+
+  void Function() get onLogin;
+  @JsonKey(ignore: true)
+  _$$_LoginWithGoogleCopyWith<_$_LoginWithGoogle> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -407,6 +577,7 @@ class _$_Logout implements _Logout {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(void Function() onLogin) login,
+    required TResult Function(void Function() onLogin) loginWithGoogle,
     required TResult Function(void Function() onLogout) logout,
     required TResult Function(void Function() onRegister) register,
   }) {
@@ -418,6 +589,7 @@ class _$_Logout implements _Logout {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(void Function() onLogin)? login,
+    TResult? Function(void Function() onLogin)? loginWithGoogle,
     TResult? Function(void Function() onLogout)? logout,
     TResult? Function(void Function() onRegister)? register,
   }) {
@@ -429,6 +601,7 @@ class _$_Logout implements _Logout {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(void Function() onLogin)? login,
+    TResult Function(void Function() onLogin)? loginWithGoogle,
     TResult Function(void Function() onLogout)? logout,
     TResult Function(void Function() onRegister)? register,
     required TResult orElse(),
@@ -444,6 +617,7 @@ class _$_Logout implements _Logout {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Login value) login,
+    required TResult Function(_LoginWithGoogle value) loginWithGoogle,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Register value) register,
   }) {
@@ -455,6 +629,7 @@ class _$_Logout implements _Logout {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_Login value)? login,
+    TResult? Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Register value)? register,
   }) {
@@ -466,6 +641,7 @@ class _$_Logout implements _Logout {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Login value)? login,
+    TResult Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult Function(_Logout value)? logout,
     TResult Function(_Register value)? register,
     required TResult orElse(),
@@ -553,6 +729,7 @@ class _$_Register implements _Register {
   TResult when<TResult extends Object?>({
     required TResult Function() started,
     required TResult Function(void Function() onLogin) login,
+    required TResult Function(void Function() onLogin) loginWithGoogle,
     required TResult Function(void Function() onLogout) logout,
     required TResult Function(void Function() onRegister) register,
   }) {
@@ -564,6 +741,7 @@ class _$_Register implements _Register {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
     TResult? Function(void Function() onLogin)? login,
+    TResult? Function(void Function() onLogin)? loginWithGoogle,
     TResult? Function(void Function() onLogout)? logout,
     TResult? Function(void Function() onRegister)? register,
   }) {
@@ -575,6 +753,7 @@ class _$_Register implements _Register {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
     TResult Function(void Function() onLogin)? login,
+    TResult Function(void Function() onLogin)? loginWithGoogle,
     TResult Function(void Function() onLogout)? logout,
     TResult Function(void Function() onRegister)? register,
     required TResult orElse(),
@@ -590,6 +769,7 @@ class _$_Register implements _Register {
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
     required TResult Function(_Login value) login,
+    required TResult Function(_LoginWithGoogle value) loginWithGoogle,
     required TResult Function(_Logout value) logout,
     required TResult Function(_Register value) register,
   }) {
@@ -601,6 +781,7 @@ class _$_Register implements _Register {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
     TResult? Function(_Login value)? login,
+    TResult? Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult? Function(_Logout value)? logout,
     TResult? Function(_Register value)? register,
   }) {
@@ -612,6 +793,7 @@ class _$_Register implements _Register {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_Login value)? login,
+    TResult Function(_LoginWithGoogle value)? loginWithGoogle,
     TResult Function(_Logout value)? logout,
     TResult Function(_Register value)? register,
     required TResult orElse(),

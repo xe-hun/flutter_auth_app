@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter_auth_app/domain/core/failures.dart';
 import 'package:flutter_auth_app/infrastructure/dto/user_dto.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
 abstract class RemoteDatasource {
@@ -27,7 +28,10 @@ abstract class RemoteDatasource {
 
   void initializeDynamicLink();
 
-  void onListenToDynamicLink(void Function(Uri dynamicLink) handleDynamicLink);
+  void onListenToDynamicLink(void Function(Uri dynamicLink) handleDynamicLink,
+      void Function(AuthFailure failure) onError);
+
+  Future<UserDto> loginWithGoogle();
 }
 
 @Singleton(as: RemoteDatasource)
@@ -51,6 +55,7 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   final FirebaseDynamicLinks firebaseDynamicLinks;
   User? _user;
   Uri? _deepLink;
+  GoogleSignIn? _googleSignIn;
 
   @override
   Future<UserDto> register({
@@ -112,14 +117,9 @@ class RemoteDatasourceImpl implements RemoteDatasource {
 
   @override
   Future<void> logout() async {
-    try {
-      await firebaseAuth.signOut();
-    } on FirebaseAuthException catch (e) {
-      if (e.code == 'network-request-failed') {
-        throw const AuthFailure.networkFailure();
-      }
-      throw AuthFailure.authGenericFailure(failedValue: e.code);
-    }
+    _googleSignIn?.disconnect();
+    _googleSignIn?.signOut();
+    firebaseAuth.signOut();
   }
 
   @override
@@ -131,10 +131,8 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   @override
   Future<void> sendEmailVerificationLink() async {
     var actionCodeSettings = ActionCodeSettings(
-      // url: 'https://fir-auth-847b7.firebaseapp.com',
       url:
           'https://www.flutterauthdemonstration.com/?validate-email=${_user!.email}',
-      // dynamicLinkDomain: 'flutterauthdemonstration.page.link/4Yif',
       androidPackageName: 'com.example.flutter_auth_app',
       androidInstallApp: true,
       androidMinimumVersion: '12',
@@ -174,22 +172,46 @@ class RemoteDatasourceImpl implements RemoteDatasource {
   }
 
   @override
-  void onListenToDynamicLink(void Function(Uri dynamicLink) handleDynamicLink) {
+  void onListenToDynamicLink(void Function(Uri dynamicLink) handleDynamicLink,
+      void Function(AuthFailure failure) onError) {
     firebaseDynamicLinks.onLink.listen((event) async {
-      print(event);
       var actionCode = event.link.queryParameters['oobCode'];
       try {
         await firebaseAuth.checkActionCode(actionCode!);
         await firebaseAuth.applyActionCode(actionCode);
-        // If successful, reload the user:
-        firebaseAuth.currentUser?.reload();
+        await firebaseAuth.currentUser?.reload();
         handleDynamicLink(event.link);
       } on FirebaseAuthException catch (e) {
         if (e.code == 'network-request-failed') {
-          throw const AuthFailure.networkFailure();
+          onError(const AuthFailure.networkFailure());
         }
-        throw AuthFailure.authGenericFailure(failedValue: e.code);
+        onError(AuthFailure.authGenericFailure(failedValue: e.code));
       }
     });
+  }
+
+  @override
+  Future<UserDto> loginWithGoogle() async {
+    try {
+      _googleSignIn = GoogleSignIn();
+      final googleUser = await _googleSignIn!.signIn();
+      final googleAuth = await googleUser!.authentication;
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      final userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+      _user = userCredential.user!;
+      return UserDto.fromFirebaseUser(_user!);
+    } on FirebaseException catch (e) {
+      if (e.code == 'weak-password') {
+        throw const AuthFailure.weekPassword();
+      } else if (e.code == 'network-request-failed') {
+        throw const AuthFailure.networkFailure();
+      }
+
+      throw AuthFailure.authGenericFailure(failedValue: e.code);
+    }
   }
 }

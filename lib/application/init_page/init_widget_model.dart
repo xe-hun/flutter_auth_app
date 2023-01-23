@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_auth_app/application/theme/theme_bloc.dart';
+import 'package:flutter_auth_app/domain/core/failures.dart';
 import 'package:flutter_auth_app/domain/i_repository/i_app_repository.dart';
 import 'package:flutter_auth_app/domain/i_repository/i_auth_repository.dart';
 import 'package:flutter_auth_app/injectable.dart';
@@ -25,15 +26,20 @@ class InitWidgetModel {
     } else {
       router.replace(const AuthRoute());
     }
-    appRepository.onListenToDynamicLink(_handleDynamicLink);
+    appRepository.onListenToDynamicLink(
+        _handleDynamicLink, _onDynamicLinkError);
   }
 
   void _handleDynamicLink(Uri dynamicLink) {
     final router = getIt<AppRouter>();
 
-    if (jsonDecode(dynamicLink.queryParameters['validate-email'].toString()) ==
-        true) {
+    final continueUrl = dynamicLink.queryParameters['continue-url'];
+    final uri = Uri.parse(continueUrl ?? '');
+
+    if (jsonDecode(uri.queryParameters['validate-email'].toString()) == true) {
       router.replace(const EmailVerifiedRoute());
     }
   }
+
+  void _onDynamicLinkError(AuthFailure failure) {}
 }

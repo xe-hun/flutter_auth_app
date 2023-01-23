@@ -11,6 +11,8 @@ abstract class IAuthRepository {
     required String password,
   });
 
+  Future<Either<AuthFailure, model.User>> loginWithGoogle();
+
   Future<Either<AuthFailure, model.User>> register({
     required String password,
     required String email,

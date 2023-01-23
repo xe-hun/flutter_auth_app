@@ -3,12 +3,10 @@ import 'package:flutter_auth_app/presentation/app_pages/app_page.dart';
 import 'package:flutter_auth_app/presentation/app_pages/profile_page.dart';
 import 'package:flutter_auth_app/presentation/auth_pages/login_password_page.dart';
 import 'package:flutter_auth_app/presentation/email_verification_pages/email_verified_page.dart';
-import 'package:flutter_auth_app/presentation/email_verification_pages/send_verification_email_page.dart';
 import 'package:flutter_auth_app/presentation/init_page/init_page.dart';
 import 'package:flutter_auth_app/presentation/auth_pages/auth_page.dart';
 import 'package:flutter_auth_app/presentation/auth_pages/login_page.dart';
 import 'package:flutter_auth_app/presentation/auth_pages/signup_page.dart';
-import 'package:flutter_auth_app/router/app_guard.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -27,7 +25,6 @@ import 'package:flutter_auth_app/router/app_guard.dart';
         ]),
     AutoRoute(
       page: AppPage,
-      guards: [AppGuard],
       children: [
         AutoRoute(
           initial: true,
@@ -35,9 +32,9 @@ import 'package:flutter_auth_app/router/app_guard.dart';
         )
       ],
     ),
-    AutoRoute(
-      page: SendVerificationEmailPage,
-    ),
+    // AutoRoute(
+    //   page: SendVerificationEmailPage,
+    // ),
     AutoRoute(
       page: EmailVerifiedPage,
     ),

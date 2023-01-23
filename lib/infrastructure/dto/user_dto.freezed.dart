@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$UserDto {
   String get displayName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserDtoCopyWith<UserDto> get copyWith => throw _privateConstructorUsedError;
@@ -28,7 +29,7 @@ abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res, UserDto>;
   @useResult
-  $Res call({String displayName, String email});
+  $Res call({String displayName, String email, String? imageUrl});
 }
 
 /// @nodoc
@@ -46,6 +47,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
   $Res call({
     Object? displayName = null,
     Object? email = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_value.copyWith(
       displayName: null == displayName
@@ -56,6 +58,10 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -67,7 +73,7 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       __$$_UserDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String displayName, String email});
+  $Res call({String displayName, String email, String? imageUrl});
 }
 
 /// @nodoc
@@ -82,6 +88,7 @@ class __$$_UserDtoCopyWithImpl<$Res>
   $Res call({
     Object? displayName = null,
     Object? email = null,
+    Object? imageUrl = freezed,
   }) {
     return _then(_$_UserDto(
       displayName: null == displayName
@@ -92,6 +99,10 @@ class __$$_UserDtoCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -99,16 +110,20 @@ class __$$_UserDtoCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserDto extends _UserDto {
-  _$_UserDto({required this.displayName, required this.email}) : super._();
+  _$_UserDto(
+      {required this.displayName, required this.email, required this.imageUrl})
+      : super._();
 
   @override
   final String displayName;
   @override
   final String email;
+  @override
+  final String? imageUrl;
 
   @override
   String toString() {
-    return 'UserDto(displayName: $displayName, email: $email)';
+    return 'UserDto(displayName: $displayName, email: $email, imageUrl: $imageUrl)';
   }
 
   @override
@@ -118,11 +133,13 @@ class _$_UserDto extends _UserDto {
             other is _$_UserDto &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, displayName, email);
+  int get hashCode => Object.hash(runtimeType, displayName, email, imageUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -134,13 +151,16 @@ class _$_UserDto extends _UserDto {
 abstract class _UserDto extends UserDto {
   factory _UserDto(
       {required final String displayName,
-      required final String email}) = _$_UserDto;
+      required final String email,
+      required final String? imageUrl}) = _$_UserDto;
   _UserDto._() : super._();
 
   @override
   String get displayName;
   @override
   String get email;
+  @override
+  String? get imageUrl;
   @override
   @JsonKey(ignore: true)
   _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>

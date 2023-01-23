@@ -5,7 +5,6 @@ import 'package:flutter_auth_app/firebase_options.dart';
 import 'package:flutter_auth_app/injectable.dart';
 import 'package:flutter_auth_app/presentation/core/init_widget.dart';
 import 'package:flutter_auth_app/router/app_router.gr.dart';
-import 'package:flutter_auth_app/router/app_guard.dart';
 
 bool shouldUseFirebaseEmulator = false;
 
@@ -19,9 +18,9 @@ void main() async {
     await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   }
   await configureDependencies();
-  getIt.registerSingleton<AppRouter>(AppRouter(appGuard: getIt<AppGuard>()));
+  getIt.registerSingleton<AppRouter>(AppRouter());
 
   runApp(const InitWidget());
 }
 
-final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
+// final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
